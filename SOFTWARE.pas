@@ -4,7 +4,7 @@ uses crt;
 
 var choice,responses:string;
 
-var choices : array [1..5] of string;
+var choices : array [1..5] of string; {Stores Responses.}
 
 var x:integer;
 
@@ -22,7 +22,7 @@ begin
      writeln;
      readln(choice);
      writeln;
-     if choice = 'yes' then choices[1] := '1'
+     if choice = 'yes' then choices[1] := '1' 
      else choices[1] := '0';
 
      writeln('Question 2:');
@@ -60,9 +60,10 @@ begin
      writeln;
      if choice = 'yes' then choices[5] := '1'
      else choices[5] := '0';
+     
      x := 1;
 
-     for x := 1 to 5 do responses := responses + choices[x];
+     for x := 1 to 5 do responses := responses + choices[x]; {Iterates to produce a string of responses.}
 
      if responses = '11010' then writeln('The software is likely to be system software.')
      else if responses = '00101' then writeln('The software is likely to be application software.')
@@ -70,7 +71,7 @@ begin
      else if responses = '00101' then writeln('The software is likely to be application software.')
      else if responses = '01011' then writeln('The software is likely to be system software.');
 
-    {Possibilty to add extra combinations here.}
+     {Possibilty to add extra combinations here.}
 
      readln;
 
